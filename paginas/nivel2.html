@@ -1,0 +1,45 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de naves espaciales</title>
+    <link rel="stylesheet" href="../css/nivel2.css">
+    <script type="text/javascript" src="../js/nivel2.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/main.js"></script>
+</head>
+<body>
+    <h1 class="titulo">NIVEL 2</h1>
+    <div class="contenedor-botones">
+        <!-- boton cerrar -->
+       <a id="cerrar" href="/index.html" >Home</a>
+       <div class="tiempo" id = "time">20</div>
+        <div id="caja_recarga">
+            <p id="reset_btn">Reiniciar</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- canvas contien la imagen del jeugo -->
+        <canvas id="my_canvas" width="700" height="600"></canvas>
+        
+        <!-- barra contiene el mensaje de enemigos destruidos  -->
+        <h3 class="barra"></h3>
+
+        <!-- este div contine todos los botones  -->
+        <div class=" cajabotones2">
+            <!-- bonones para moverse y disparar -->
+            <button class="boton" id="left_btn">Izquierda</button>
+            <button class="boton" id="fire_btn">Disparar</button>
+            <button class="boton" id="right_btn">Derecha</button>
+          
+        </div>
+    </div>
+    
+    <video muted autoplay loop >
+        <source src="../videos/Fondo-video.mp4">
+    </video>
+    <div class="capa"></div>
+</body>
+<script src="../js/main.js"></script>
+</html>

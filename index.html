@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Game</title>
+    <!--Importacion de fuente y libreria por Juan Villegas-->
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/css/responsi.css">
+    <link rel="stylesheet" href="/css/sidr.dark.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/235aee5699.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!--HTML(Menu) hecho por Gianluka Vazques-->
+    
+
+    <div class="contenedor_global" id="tamaño">
+    <!-- botones de menu -->
+    <div id="sidr">
+    <ul class="nav" >
+        <li><a href="#historias">HISTORIA</a></li>
+        <li><a href="#como-jugar">COMO JUGAR</a></li>
+        <li><a href="#nuevo" id="musica2">JUGAR</a></li>
+        <li><a href="/paginas/indexcreditos.html">CRÉDITOS</a></li>
+    </ul>
+</div>
+<div id="overlay"> </div>
+
+<a id="simple-menu" class="menu-button" href="#sidr">Toggle menu</a>
+    <!-- fin de botones del menu -->
+
+  <!-- seccion de la imagen principal del juego  -->
+    <div class="contenedor">
+        <h1 id="title">Infección</h1>
+        <img id="imagen-menu" src="img/cazador.jpg" alt="cazador">
+        <a href="#historias"><button id="play-button">SIGUIENTE</button></a>
+    </div>
+    <!-- fin de la sección principal del juego  -->
+
+      <!-- sección del la historia del juego -->
+    <div class="contenedor-historia" id="historias">
+        <div class="contenedor2-historia">
+        <div id="left-div">
+            <h1>HISTORIA</h1>
+            <p id="letra">
+                Un equipo de investigación encontró un nuevo tipo
+                de virus mortal para los humanos, este virus lo
+                portan algunas especies de aves, los científicos
+                liberaron aves robots para tomar muestras pero 
+                alguien las hackeo y no deja que vuelvan. Tu misión
+                es cazar esas aves robots y recuperar las muestras.
+                Tenemos que estudiar este virus para encontrar la cura,
+                el destino de la humanidad esta en tus manos soldado.
+
+            </p>
+            
+        </div>
+        <div id="right-div" data-aos="flip-right" data-aos-duration="1000">
+        <!-- se encontro atributos en el html que no se estan usando --> 
+            <img src="img/virus_gif.gif" alt="">
+        </div>
+    </div>
+    <div class="centrar"><a href="#como-jugar"><button id="como-jugar-button">SIGUIENTE</button></a></div>
+    </div>
+    <!-- final de la historia del juego -->
+
+    <!--Sección de como jugar del juego-->
+    <div id="como-jugar">
+        <section class="pasos">
+               <H2>INSTRUCCIONES DEL JUEGO </H2>
+                <ol>
+                    <li>Primero apunta al pato con el arma. </li>
+                    <li>Luego dispara lo más rápido posible.</li>
+                    <li>Mientras mates más patos en menos tiempo iras ascendiemdo a un nuevo rango . </li>
+                </ol>
+
+        </section>
+        <div id="contenedor-rangos">
+            <div class="low" data-aos="fade-up" data-aos-duration="500">
+                <img src="img/low-range.webp" alt="low" class="rango-img">
+                <h1>CADETE</h1>
+                <p>Consigue 100 puntos para obtener este rango.</p>
+            </div>
+            <div class="mid" data-aos="fade-up" data-aos-duration="1000">
+                <img src="img/mid-range.webp" alt="mid" class="rango-img">
+                <h1>OFICIAL</h1>
+                <p>Consigue 500 puntos para obtener este rango.</p>
+            </div>
+            <div class="height" data-aos="fade-up" data-aos-duration="1500">
+                <img src="img/high-range.webp" alt="hight" class="rango-img">
+                <h1>CAPITÁN</h1>
+                <p>Consigue 1000 puntos para obtener este rango.</p>
+            </div>
+        </div>
+        <div class="centrar" data-aos="zoom-in-up" id="musica"><a id="jugar-button" href="#nuevo">JUGAR</a></div>
+    </div>
+   
+  <!-- fin de la sección como juegar del juego -->
+    
+    <!-- inicio del contenedor princinciapl de la sección del juego -->
+    <!-- la propiedad dta-aos afecta la posición de la imagen de la pistola  -->
+    <div id="nuevo" class="overlay" >
+        <div id="popupbody">
+            
+            <!-- contenedor 2 del juego -->
+            <div class="mega-contenedor">
+             <div class="contenedor-botones">
+                  <!-- boton cerrar -->
+                  <a id="cerrar" href="#" onclick="pauseInicio()">Cerrar</a>
+                   <div class="time" id = "time">30</div>
+                    <div id="caja_recarga">
+                    <p>Reiniciar</p>
+                   </div>
+              </div>
+                <!-- contenedor 3 -->
+                <div class="contenedor2">
+                    <div id="final"></div>
+
+                    <div id="patorobot"></div>
+                </div>
+
+                <!-- arma del soldado -->
+            <div class="contenedor-arma">
+                <div class="arma-box" id ="arma-box"></div>
+            </div>
+            </div>
+              <!-- Controles del volumen -->
+              <div class="conte-botones">
+                <button onclick="restoreAudio()"><i class="fa-solid fa-circle-play"></i> </button>
+                <button onclick="pauseInicio()"><i class="fa-solid fa-circle-pause"></i></button> 
+                <button onclick="subirVol()"><i class="fa-solid fa-volume-high"></i></button>
+                 <button onclick="bajarVol()"><i class="fa-solid fa-volume-low"></i></button>
+                
+        </div> 
+
+        
+<!-- Cierre de controles de volumen  -->
+         </div>
+
+          
+    </div>
+    <!-- fin de la sección del juego -->
+
+    <!-- seccion de datos de fin de partida -->
+    <div class="resultados">
+        <div class="centrado" id = "centrado">
+            <img src="img/winner.png" alt="" data-aos="zoom-in-up" data-aos-duration="800">
+            <div id="puntos" data-aos="zoom-in-up" data-aos-duration="1000"></div>
+            <div id="rango" data-aos="zoom-in-up" data-aos-duration="1500"></div>
+            <a href="paginas/nivel2.html" id="nuevo-button" class="siguiente"> sigiente nivel</a>
+            <a href="#nuevo" id="nuevo-button2" class="siguiente">intentalo nuevamente</a>
+        </div>
+    </div>
+
+</div>
+    <script  src="js/main.js"></script>
+</body>
+<!--Activacion de libreria por Juan Villegas-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/sidr.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script>
+    (function(sidr) {
+      "use strict"
+
+      sidr.new('#simple-menu', {
+        displace: false
+      });
+
+      document.getElementById('overlay').addEventListener('click', function () {
+        sidr.close('sidr');
+      }, false);
+
+      document.getElementById('close-menu-button').addEventListener('click', function () {
+        sidr.close('sidr');
+      }, false);
+
+    })(window.sidr);
+  </script>
+
+</html>
